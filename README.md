@@ -46,7 +46,7 @@ The main folder contains:
 '- extractor_ARs.ipynb contains functions to uploads and pre-process data from IPCC databases
 '- UN_ARs.ipynb contains functions to uploads and pre-process data from UN databases
 
-The `data` folder should be populated downloading the data from [zenodo](10.5281/zenodo.8312058).
+The `data` folder should be populated downloading the data from [zenodo](https://doi.org/10.5281/zenodo.8312059).
 
 Once the zipped folder is downloaded, it should be unzipped and the content of the folder copied in the GitHub `data` folder.
 
