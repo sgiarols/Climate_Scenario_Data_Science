@@ -51,9 +51,10 @@ The `data` folder should be populated downloading the data from [zenodo](https:/
 Once the zipped folder is downloaded, it should be unzipped and the content of the folder copied in the GitHub `data` folder.
 
 At that point, the `data` folder will contain:
-'- in `other_pop_data` files from 
-[World Bank](https://databank.worldbank.org/source/population-estimates-and-projections)
-[World Census](https://www.census.gov/data-tools/demo/idb/#/dashboard?COUNTRY_YEAR=2023&COUNTRY_YR_ANIM=2023)
+'- in `other_pop_data` files containing data from 
+[World Bank](https://databank.worldbank.org/source/population-estimates-and-projections) (filename: `uscensus.xlsx`); 
+[World Census](https://www.census.gov/data-tools/demo/idb/#/dashboard?COUNTRY_YEAR=2023&COUNTRY_YR_ANIM=2023) (filename: `worldbank.xlsx`); 
+[Institute of Health Metrics and Evaluation](https://ghdx.healthdata.org/record/ihme-data/global-population-forecasts-2017-2100) (filename: `IHME.csv`).
 '- in the folder `SSP` the Shared Socioeconomic drivers
 [SSP](https://tntcat.iiasa.ac.at/SspDb/dsd?Action=htmlpage&page=10)
 '- [UN](https://population.un.org/wpp/Download/Standard/Population/)
