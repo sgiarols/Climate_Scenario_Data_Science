@@ -1,5 +1,7 @@
 ipykernel
 numpy
 scipy
-seaborn
+seaborn>=0.13
 matplotlib
+xlrd
+openpyxl
