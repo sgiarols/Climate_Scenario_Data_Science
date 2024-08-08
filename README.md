@@ -61,3 +61,8 @@ At that point, the `data` folder will contain:
 '- `IAMstat.xlsx`, an overview file of the scenario metadata published with the IPCC databases
 '- `RFF.csv`, containing the population projections obtained by [Resources for the Future](https://zenodo.org/record/6016583#.Y42iFuzP2rP)
 '- the remaining `.csv` files with names `AR6#`, `AR5#`, `IAMC15#` contain the IPCC scenarios assessed by the IPCC for preparing the IPCC assessment reports. They can be downloaded at [AR5](https://tntcat.iiasa.ac.at/AR5DB), [SR 1.5](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/#/downloads), and [AR6](https://data.ene.iiasa.ac.at/ar6/#/workspaces)
+
+## Acknowledgments
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101033173.
+
+![EU logo](https://github.com/sgiarols/Climate_Scenario_Data_Science/tree/main/images)
