@@ -65,4 +65,5 @@ At that point, the `data` folder will contain:
 ## Acknowledgments
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101033173.
 
+<img width="30px" src="https://github.com/sgiarols/Climate_Scenario_Data_Science/tree/main/images/EU_logo_high.png" alt="EU logo" />
 ![EU logo](https://github.com/sgiarols/Climate_Scenario_Data_Science/tree/main/images/EU_logo_high.png)
