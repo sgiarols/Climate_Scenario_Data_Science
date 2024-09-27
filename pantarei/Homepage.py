@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import streamlit as st
 
-st.image("/Users/sara/pantarei/data/MSCA_logo.png")
+st.image("/data/MSCA_logo.png")
 
 st.title("PANTA REI: nProspettive di AdattameNTo sociAle nell'eRa del cambiamEnto climatico")
 
