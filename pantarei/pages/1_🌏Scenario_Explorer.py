@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
-
+dirfolder = os.path.join(dirflder, "/pantarei")
 st.title("Focus on emissions")
 def readdata (selected_var, syears):
 
