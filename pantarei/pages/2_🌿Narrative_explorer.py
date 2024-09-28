@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
-
+dirfolder = os.path.join(dirflder, "/pantarei")
 st.title("Focus on social dimension in scenarios")
 
 st.write("Scenarios are based on a socio-economic narrative")
