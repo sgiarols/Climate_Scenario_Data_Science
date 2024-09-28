@@ -5,6 +5,7 @@ import streamlit as st
 
 dirfolder = os.getcwd()
 dirfolder = os.path.dirname(dirfolder)
+dirfolder = os.path.basename(dirfolder)
 st.image(os.path.join(dirfolder, "MSCA_logo.png"))
 
 st.title("PANTA REI: Perspectives on mitigation and adaptation of climate change")
