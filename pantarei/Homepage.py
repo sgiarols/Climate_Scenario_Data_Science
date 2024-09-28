@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
-dirfolder = os.path.join(dirfolder, "/pantarei")
+dirfolder = os.path.dirname(dirfolder)
 st.image(os.path.join(dirfolder, "MSCA_logo.png"))
 
 st.title("PANTA REI: Perspectives on mitigation and adaptation of climate change")
