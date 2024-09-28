@@ -4,13 +4,11 @@ import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
-if "pantarei" not in dirfolder:
-    dirfolder = os.path.join(dirfolder, "pantarei")
 
-st.title("Focus sull'uso dei combustibili")
+st.title("Focus on emissions")
 def readdata (selected_var, syears):
 
-    file = os.path.join(dirfolder, "data/AR6_Scenarios_Database_World_v1.1.csv")
+    file = os.path.join(dirfolder, "pages/data/AR6_Scenarios_Database_World_v1.1.csv")
 
     strings = ["Model",	"Scenario",	"Region",	"Variable",	"Unit"]
 
@@ -23,7 +21,7 @@ def readdata (selected_var, syears):
 
 def add_policy(chart_data: pd. DataFrame):
     # part 2 meta added
-    folder = "data/"
+    folder = "pages/data/"
     folder = os.path.join(dirfolder, folder)
 
     # Metadata have been edited correcting the Sustainable IMP which was wrongly assinged to SSP2
@@ -48,7 +46,7 @@ def add_policy(chart_data: pd. DataFrame):
     return chart_data
 
 def add_category(chart_data: pd. DataFrame):
-    folder = "data/"
+    folder = "pages/data"
     folder = os.path.join(dirfolder, folder)
 
     # Metadata have been edited correcting the Sustainable IMP which was wrongly assinged to SSP2
@@ -116,15 +114,13 @@ syears = [str(y) for y in years]
 
 selected_var = [
                 "Emissions|CO2",
-                "Emissions|CO2|Energy|Demand|AFOFI",
                 "Emissions|CO2|Energy|Demand|Industry",
                 "Emissions|CO2|Energy|Demand|Residential and Commercial",
                 "Emissions|CO2|Energy|Demand|Transportation",
 
                 ]
 selected_var_name = [
-                "Emissioni CO2",
-                "Agricoltura",                
+                "Emissioni CO2",             
                 "Industria",
                 "Edifici & Servizi",
                 "Trasporti",
@@ -139,9 +135,9 @@ output[syears]*= 1/1000
 output["Unit"] = "Gt CO2/yr"
 
 
-st.write("Ogni scenario rappresenta come emissioni possano evolvere")
+st.write("A scenario shows how emissions can evolve")
 
-label = "Vediamo assieme le categorie di emissione espresse in Gt CO2 / yr"
+label = "Emissions of CO2 has different categories (values in Gt CO2 / yr)"
 
 selection = st.selectbox(label, selected_var_name, index=0)
 
@@ -155,16 +151,17 @@ st.area_chart(chart_data1)
 
 
 # Part 2
-st.write("Se i grafici sembrano un po' confusi, vediamo le traiettorie nei loro valori minimi nel tempo")
+st.write("Maybe the chart is too confusing for the high number of scenarios")
 
 chart_data2 = re_order(chart_data)[0]
 
 chart_data2min = pd.DataFrame(chart_data2[years]).transpose()
 chart_data2min.columns = chart_data2["Category"]
+st.write("Let's see the trends for the minimum values")
 
 st.line_chart(chart_data2min)
 
-st.write("Vediamo invece i massimi nel tempo")
+st.write("Let's see the trends for the maximum values")
 chart_data2 = re_order(chart_data)[1]
 
 chart_data2max = pd.DataFrame(chart_data2[years]).transpose()
@@ -172,24 +169,24 @@ chart_data2max.columns = chart_data2["Category"]
 
 st.line_chart(chart_data2max)
 
-st.write("Le politiche climatiche influenzao diversamente le emissioni.")
+st.write("Policies influence emissions differently")
 
 # Here we change the 
-st.write("Le principali emissioni dipendono dal consumo di combustibile")
+st.title("The use of fuels effects emissions")
 
 select_variable_fuel = ["Final Energy|Electricity",
                         "Final Energy|Gases",
                         "Final Energy|Liquids",
-                        "Final Energy|Solids",
-                        "Final Energy|Hydrogen",]
+                        "Final Energy|Solids|Coal",]
 
-display_variable = ["electricity", "gaseous fuels", "liquid fuels", "solid fuels", "hydrogen"]
+display_variable = ["electricity", "gaseous fuels", "liquid fuels", "solid fuels"]
 
 my_fuel = readdata (select_variable_fuel, syears)
 
 
 select_mit = list(chart_data2.Category.unique())
-mit_sel = st.selectbox("Scegli un obiettivo climatico di mitigazione", select_mit, index=0)
+st.write("Policies can be more or less stringent")
+mit_sel = st.selectbox("Choose a climate ambition", select_mit, index=0)
 
 chart_data_mit = chart_data.loc[chart_data.Category == mit_sel]
 chart_data_mit1 = chart_data_mit.transpose()
@@ -197,7 +194,7 @@ chart_data_mit1.columns = chart_data_mit1.loc[chart_data_mit1.index=="String"].v
 length = int(len(chart_data_mit1)-1)
 chart_data_mit1 = chart_data_mit1.iloc[6:length,:]
 
-st.write("GLi obiettivi climatici possono essere piu' o meno stringenti")
+
 st.area_chart(chart_data_mit1)
 
 # #filter by mitigation
@@ -207,10 +204,10 @@ chart_fuel = add_category(chart_fuel)
 chart_fuel = add_policy(chart_fuel)
 chart_fuel1 = pd.DataFrame(chart_fuel.loc[chart_fuel.Category==mit_sel])
 max_scenarios = [i+1 for i in range(10000)]
-scen_sel = st.selectbox("SScegli il massimo numero di scenari da rappresentare", max_scenarios, index=10)
+scen_sel = st.selectbox("Limit the number of scenarios to represent ", max_scenarios, index=10)
 
 for i in range(len(select_variable_fuel)):
-    st.write("Ecco  la domanda futura di energia globale in EJ /yr espressa come ", display_variable[i])
+    st.write("This is the energy trend in EJ /yr as ", display_variable[i])
 
     chart_fuel2 = pd.DataFrame(chart_fuel1.loc[chart_fuel1.Variable==select_variable_fuel[i]])
 

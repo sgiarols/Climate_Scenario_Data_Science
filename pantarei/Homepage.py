@@ -4,13 +4,11 @@ import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
-if "pantarei" not in dirfolder:
-    dirfolder = os.path.join(dirfolder, "pantarei")
 
-st.image(os.path.join(dirfolder, "data/MSCA_logo.png"))
+st.image(os.path.join(dirfolder, "MSCA_logo.png"))
 
-st.title("PANTA REI: Prospettive di AdattameNTo sociAle nell'eRa del cambiamEnto climatico")
+st.title("PANTA REI: Perspectives on mitigation and adaptation of climate change")
 
-st.write("Benvenuti. Vedremo come adattamento e mitigazione entrino nella modellazione climatica")
+st.write("Welcome! We will see how mitigation and adaptation are in the modelling.")
 
 
