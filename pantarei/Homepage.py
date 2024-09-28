@@ -5,7 +5,7 @@ import streamlit as st
 
 dirfolder = os.getcwd()
 dirfolder = os.path.dirname(dirfolder)
-dirfolder = os.path.split(os.path.split(dirfoldet)[0])[1]
+dirfolder = os.path.split(os.path.split(dirfolder)[0])[1]
 
 st.image(os.path.join(dirfolder, "MSCA_logo.png"))
 
