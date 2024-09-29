@@ -1,11 +1,15 @@
 import numpy as np
 import os
+
 import pandas as pd
 import streamlit as st
 
 dirfolder = os.getcwd()
 
-print  (dirfolder)
+path = os.path.abspath(dirfolder)
+
+if "pantarei" not in path:
+    dirfolder = os.path.join(path, "pantarei")
 
 st.write(dirfolder)
 
