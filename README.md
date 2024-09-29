@@ -5,6 +5,11 @@ The folder
 ![population_data_analysis](https://github.com/sgiarols/Climate_Scenario_Data_Science/tree/main/population_data_analysis)
 contains software packages for auditing the IPCC database for population data.
 
+The folder
+![pantarei](https://github.com/sgiarols/Climate_Scenario_Data_Science/tree/main/pantarei)
+contains the visualisation app for non-modellers. The interface can be reached at this
+![link](climatescenariodatascience-bwlfdzef74avlseaws9syy.streamlit.app)
+
 ## Acknowledgments
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101033173.
 
