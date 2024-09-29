@@ -18,5 +18,6 @@ st.title("Perspectives on mitigation and adaptation of climate change")
 
 st.write("Welcome! We will see how mitigation and adaptation are in the modelling.")
 
+st.write("The project is entitled ""Climate economic policies: assessing values and costs of uncertainty in energy scenarios — MANET""")
 
 
