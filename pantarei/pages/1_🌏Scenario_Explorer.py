@@ -119,16 +119,9 @@ syears = [str(y) for y in years]
 
 selected_var = [
                 "Emissions|CO2",
-                "Emissions|CO2|Energy|Demand|Industry",
-                "Emissions|CO2|Energy|Demand|Residential and Commercial",
-                "Emissions|CO2|Energy|Demand|Transportation",
-
                 ]
 selected_var_name = [
                 "Emissioni CO2",             
-                "Industria",
-                "Edifici & Servizi",
-                "Trasporti",
                 ]
 
 strings = ["Model",	"Scenario",	"Region",	"Variable",	"Unit"]
@@ -144,7 +137,7 @@ st.write("A scenario shows how emissions can evolve")
 
 label = "Emissions of CO2 has different categories (values in Gt CO2 / yr)"
 
-selection = st.selectbox(label, selected_var_name, index=0)
+selection = "Emissions|CO2"
 
 # Part 1
 chart_data = select_variable(output, selected_var[selected_var_name.index(selection)], years, syears)
