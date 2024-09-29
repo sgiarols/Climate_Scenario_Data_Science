@@ -137,7 +137,7 @@ st.write("A scenario shows how emissions can evolve")
 
 label = "Emissions of CO2 has different categories (values in Gt CO2 / yr)"
 
-selection = "Emissions|CO2"
+selection = ["Emissions|CO2"]
 
 # Part 1
 chart_data = select_variable(output, selected_var[selected_var_name.index(selection)], years, syears)
